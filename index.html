@@ -29,11 +29,19 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>Some tools for big data</h1>
-        <p>This is my personal GitHub page. This will be the central place to link to my GitHub projects and basic repositories. For now, I only have some basic tools, but will populate this site with more content in the coming weeks. </p>
+        <p>This is my personal GitHub page. This will be the central place to link to my GitHub projects and repositories. For now, I only have some basic tools, but will populate this site with more content as I make them more user friendly. </p>
+         <br/>
 
-        
+        <h2>Some Basic Tools</h2>
 
-        <h2>New Material</h2>
+        <p>In the repository <a href="https://github.com/hughcross/seq_tools.git">seq_tools</a> I have put a few scripts that I use for manipulating DNA sequence data. A useful one is <b>seq_extractor.py</b>, that I use to extract a subset of sequences from a larger fasta file, from a file with a list of sequence ids. The page contains example files. I have used this script a great deal, as I find I often want to take a subset of sequences from a file (e.g. differentially expressed transcripts from a transcriptome file). I often use it interactively in Jupyter Notebook. If you want to do this you can just import the <i>extract_seqs</i> function from this script. I have extracted sequences from very large files (e.g. spruce genome, 8 Gb with about 12 million scaffolds). The timing was tremendously improved when I converted the list of sequence ids to a Python set (from hours to minutes). Just goes to show that data structures matter!</p> 
+
+        <p>Another useful tool is <b>revcomp.py</b> that will simply return the reverse complement of either a single sequence, or a fasta file.</p>
+
+        <p>The script <b>seq_name_changer.py</b> is a bit more involved, mostly because it has several options. I like to rename all my sequence names in each file to have more information than the random code that the sequencing machine spits out. I know there are heaps of programs and scripts out there that can change read names in a sequence file, or have that capability among other options. However, I have often found that I want to change the names in a way that doesn't fit with the usual program. This script is a combination of the various name-changing scripts I have written. The option I use often is to conform to RNAseq paired end sequencing format that is required by a few programs. The most common (although not only) format is to have forward reads end in '/1' and reverse reads end in '/2', with nothing after this on the name. This option can be invoked with '-f fwd' or '-f rev' (f for format). Not all programs are fussy about the naming, but some of them will spit out errors, or just stop, without telling you what happened. I find it is good practice to change all my paired end data and stick to this scheme.</p>
+        <br/>
+
+        <h2>Additional tools</h2>
 
         <p>More content coming!</p>
 
