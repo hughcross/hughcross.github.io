@@ -41,6 +41,16 @@
         <p>The script <b>seq_name_changer.py</b> is a bit more involved, mostly because it has several options. I like to rename all my sequence names in each file to have more information than the random code that the sequencing machine spits out. I know there are heaps of programs and scripts out there that can change read names in a sequence file, or have that capability among other options. However, I have often found that I want to change the names in a way that doesn't fit with the usual program. This script is a combination of the various name-changing scripts I have written. The option I use often is to conform to RNAseq paired end sequencing format that is required by a few programs. The most common (although not only) format is to have forward reads end in '/1' and reverse reads end in '/2', with nothing after this on the name. This option can be invoked with '-f fwd' or '-f rev' (f for format). Not all programs are fussy about the naming, but some of them will spit out errors, or just stop, without telling you what happened. I find it is good practice to change all my paired end data and stick to this scheme.</p>
         <br/>
 
+        <h2>Useful Tools for NCBI files</h2>
+
+        <p>My repository <a href="https://github.com/hughcross/genbanking">genbanking</a> contains a couple of scripts for parsing NCBI files, including BLAST files and Genbank format sequence files. I use these kinds of files so often that I put together some general tools for parsing and extracting information from them. I describe two below, but I will add more.</p>
+
+        <p>For running BLAST searches, my preferred output format is tabular (option -outfmt 6). This is because they are human readable for a quick look, but also are tab-delimited so easy to parse. Also, there are many options to customize them. I have written many scripts that parse one or other formats, based on the information I needed, that I finally wrote a function that allows any of the fields from a tabular BLAST output to be utilized, either with default or custom tab format. I realize that Biopython has good modules for parsing BLAST files, but only from xml format, which is less convenient when you want to examine the files before parsing. The script <b>filter_blast_results.py</b> can filter a BLAST file using up to 22 different parameters, such as minimum alignment length or evalue.</p> 
+
+        <p>I have also written several functions for extracting information from genbank files (.gb). I have written the script <b>genbank_to_fasta.py</b> that uses these functions and the Biopython packages <i>SeqIO</i> and SeqFeature to convert the genbank to a fasta file. Biopython alone can do this, but the sequence names output are just the GI number, which makes it hard to keep track of your sequences in an alignment or tree output (without renaming them). The included script will use the taxon name and either GI or Accession number to name the sequences. There are other options to modify these names, including adding the gene name, or description after the sequence name. 
+
+        <br/>
+
         <h2>Additional tools</h2>
 
         <p>More content coming!</p>
