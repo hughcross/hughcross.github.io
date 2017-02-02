@@ -6,14 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="description" content="Hugh Cross' personal github page" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <!-- CSS -->
+   <!--  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css"> -->
+    <link rel="stylesheet" href="stylesheets/poole.css">
+    <!-- <link rel="stylesheet" href="stylesheets/syntax.css"> -->
+    <link rel="stylesheet" href="stylesheets/hyde.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans%3A400,400italic,700%7CAbril+Fatface">
+
 
     <title>Hugh Cross' Personal GitHub Page</title>
   </head>
 
-  <body>
+  <body class="theme-base-0G"> -->
 
-    <!-- HEADER -->
+    <!-- HEADER 
     <div id="header_wrap" class="outer">
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/hughcross">View on GitHub</a>
@@ -23,16 +29,89 @@
 
          
         </header>
+    </div> -->
+
+    <!-- SIDEBAR -->
+        <div class="sidebar">
+  <!--
+  <div class="container sidebar-sticky">
+  -->
+  <div class="container">
+    <div class="sidebar-about">
+      <!--
+      <h1>
+        <a href="/">
+          Biopython
+        </a>
+      </h1> -->
+      
+      <div class="sidebar-logo">
+        <a href="/">
+          <img src="images/hughcross_profile_photo.jpg" alt="hcross Logo" title="hcross_forest_photo" width="100%"/>
+        </a>
+      </div> 
+      <p class="lead"></p>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <nav class="sidebar-nav">
+      <!--
+      <a class="sidebar-nav-item" href="/">Home</a>
+      -->
+            <h3 class="sidebar-nav-item" ><em>Descriptions:</em></h3>
+            <a class="sidebar-nav-item" href="#basic_tools">Basic Tools</a>
+            <a class="sidebar-nav-item" href="#ncbi_tools">NCBI Tools</a>
+            <br/>
+            
+            <h3 class="sidebar-nav-item" ><em>Repositories:</em></h3>
+
+            <a class="sidebar-nav-item" href="https://github.com/hughcross/seq_tools.git">seq_tools</a>
+            <a class="sidebar-nav-item" href="https://github.com/hughcross/genbanking">genbanking</a>
+            <br/>
+            <!-- <h3 class="sidebar-nav-item" ><em>Other Useful Links:</em></h3>
+
+            <a class="sidebar-nav-item" href="https://github.com/hughcross">GitHub home page</a>
+            <a class="sidebar-nav-item" href="http://biopython.org/wiki/Biopython">Biopython main wiki</a> -->
+            
+      <!--
+      The GitHub snapshots for each tag  misses things like compiled Tutorial.pdf
+      <a class="sidebar-nav-item" href="https://github.com/biopython/biopython/archive/v1.68.zip">Download</a>
+      -->
+      
+    </nav>
+    
+  </div>
+  <!-- <div class="sidebar-footer">
+      Biopython version 1.68<br>
+      &copy; 2017. All rights reserved.
+  </div> -->
+</div>
+
+
+    <!-- MAIN CONTENT : new main content, shifting to other css rules
     <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>Forest Health Genomics</h1>
+      <section id="main_content" class="inner"> -->
+
+
+          <div class="content container">
+      <a href="https://github.com/hughcross" class="head">View on GitHub</a>
+      <hr class="head"/>
+      <div class="page">
+  <!-- <h1 class="page-title">Biopython</h1>
+  <p>See also our
+<a href="http://news.open-bio.org/category/obf-projects/biopython/feed/rss">News feed</a>
+and <a href="https://twitter.com/biopython">Twitter</a>.</p> -->
+
+<!-- <h3 id="introduction">Introduction</h3>  -->
+
+          <h1 id="project_title">Hugh Cross' GitHub Page</h1>
+          <h2 id="project_tagline">Bioinformatic Tools for Biodiversity and Forest Genomics</h2>
+          <br/>
+
+        <!-- <h1>Forest Health Genomics</h1> -->
         <p>This is my personal GitHub page. I am the bioinformatician for the Department of <a href="http://www.nibio.no/en/topics/forest-health">Forest Health</a> at the Norwegian Institute for Bioeconomy Research (<a href="http://www.nibio.no/en">NIBIO</a>). This will be the central place to link to my GitHub projects and repositories. I have added some basic (but hopefully useful) scripts, but will populate this site with more content as I make them more user friendly. </p>
          <br/>
 
-        <h2>Some Basic Tools</h2>
+        <h2 id='basic_tools'>Some Basic Tools</h2>
 
         <p>In the repository <a href="https://github.com/hughcross/seq_tools.git">seq_tools</a> I have put a few scripts that I use for manipulating DNA sequence data. A useful one is <b>seq_extractor.py</b>, that I use to extract a subset of sequences from a larger fasta file, from a file with a list of sequence ids. The page contains example files. I have used this script a great deal, as I find I often want to take a subset of sequences from a file (e.g. differentially expressed transcripts from a transcriptome file). I often use it interactively in <a href="http://jupyter.org/">Jupyter Notebook</a>. I have extracted sequences from very large files (e.g. spruce genome, 8 Gb with about 12 million scaffolds). The speed was tremendously improved when I converted the list of sequence ids to a Python set (from hours to minutes). Just goes to show that data structures matter!</p> 
 
@@ -41,7 +120,7 @@
         <p>The script <b>seq_name_changer.py</b> is a bit more involved, mostly because it has several options. I like to rename all my sequence names in each file to have more information than the random code that the sequencing machine spits out. I know there are heaps of programs and scripts out there that can change read names in a sequence file, or have that capability among other options. However, I have often found that I want to change the names in a way that doesn't fit with the usual program. This script is a combination of the various name-changing scripts I have written. The option I use often is to conform to RNAseq paired end sequencing format that is required by a few programs. The most common (although not only) format is to have forward reads end in '/1' and reverse reads end in '/2', with nothing after this on the name. This option can be invoked with '-f fwd' or '-f rev' (f for format). Not all programs are fussy about the naming, but some of them will spit out errors, or just stop, without telling you what happened. I find it is good practice to change all my paired end data and stick to this scheme.</p>
         <br/>
 
-        <h2>Useful Tools for NCBI files</h2>
+        <h2 id='ncbi_tools'>Useful Tools for NCBI files</h2>
 
         <p>My repository <a href="https://github.com/hughcross/genbanking">genbanking</a> contains a couple of scripts for parsing NCBI files, including BLAST files and Genbank format sequence files. I use these kinds of files so often that I put together some general tools for parsing and extracting information from them. I describe two below, but I will be adding more.</p>
 
@@ -53,19 +132,21 @@
         <br/>
 
         <h2>Additional tools</h2>
+        <br/>
 
         <p>More content coming!</p>
+        <br/>
 
-</section>
+         <p class="footer"><a class="footer" href="https://github.com/poole/hyde">Hyde</a> theme provided by Mark Otto</p>
+         <p class='footer'>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+
+
+
+<!-- </section> -->
+    </div>
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">theme provided by <a href="https://github.com/jasoncostello">Jason Costello</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+    
 
   </body>
 </html>
