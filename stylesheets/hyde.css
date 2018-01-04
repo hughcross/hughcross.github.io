@@ -245,14 +245,16 @@ a.sidebar-nav-item:focus {
   color: #000080;
 }
 
-/* Forest Green  #167C3F*/
+/* Forest Green  #167C3F.  original link color #11542C sidebar #109f35 */
 .theme-base-0G .sidebar {
   background-color: #11542C;
 }
 .theme-base-0G .content a,
 .theme-base-0G .related-posts li a:hover {
-  color: #11542C;
+  color: #0f7b2b;
 }
+
+
 
 /* Red */
 .theme-base-08 .sidebar {
