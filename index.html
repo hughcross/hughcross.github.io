@@ -67,11 +67,8 @@
             <a class="sidebar-nav-item" href="https://github.com/hughcross/seq_tools.git">seq_tools</a>
             <a class="sidebar-nav-item" href="https://github.com/hughcross/genbanking">genbanking</a>
             <br/>
-            <h3 class="sidebar-nav-item" ><em>Jupyter Notebooks:</em></h3>
 
-            <a class="sidebar-nav-item" href="links.html">link to html notebooks</a>
-            
-            <br/>
+       
             <!-- <h3 class="sidebar-nav-item" ><em>Other Useful Links:</em></h3>
 
             <a class="sidebar-nav-item" href="https://github.com/hughcross">GitHub home page</a>
@@ -131,8 +128,11 @@ and <a href="https://twitter.com/biopython">Twitter</a>.</p> -->
 
         <p>For running BLAST searches, my preferred output format is tabular (option -outfmt 6). This is because they are human readable for a quick look, but also are tab-delimited so easy to parse. Also, there are many options to customize them. I have written so many scripts that parse one or other formats, based on different needs, that I finally wrote a function that allows any of the fields from a tabular BLAST output to be utilized, either with default or custom tab format. I realize that <a href="http://biopython.org/wiki/Biopython">Biopython</a> has good modules for parsing BLAST files, but only from xml format (last I looked), which is less convenient when you want to examine the files before parsing. My script <b>filter_blast_results.py</b> can filter a BLAST file using up to 22 different parameters, such as minimum alignment length or evalue.</p> 
 
-        <p>I have also written several functions for extracting information from genbank files (.gb). I have written the script <b>genbank_to_fasta.py</b> that uses these functions and the Biopython packages <i>SeqIO</i> and <i>SeqFeature</i> to convert the genbank to a fasta file. Biopython alone can do this, but the sequence names output are just the GI number, which makes it hard to keep track of your sequences in an alignment or tree output (without renaming them). The included script will use the taxon name and either GI or Accession number to name the sequences. There are other options to modify these names, including adding the gene name, or description after the sequence name. 
+        <p>I have also written several functions for extracting information from genbank files (.gb). I have written the script <b>genbank_to_fasta.py</b> that uses these functions and the Biopython packages <i>SeqIO</i> and <i>SeqFeature</i> to convert the genbank to a fasta file. Biopython alone can do this, but the sequence names output are just the GI number, which makes it hard to keep track of your sequences in an alignment or tree output (without renaming them). The included script will use the taxon name and either GI or Accession number to name the sequences. There are other options to modify these names, including adding the gene name, or description after the sequence name.</p> 
 
+        <br/>
+        <h2>Jupyter Notebooks</h2>
+        <p>I do most of my python development using Jupyter notebooks. I have started to download the notebooks in html format so I can reference them easily. <a href="links.html">Here is a link</a> to the index page.</p>
         <br/>
         <br/>
 
